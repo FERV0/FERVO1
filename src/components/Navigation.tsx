@@ -9,10 +9,10 @@ import clsx from "clsx";
 
 const navLinks = [
   { href: "/", label: "Início" },
-  { href: "/fotografia", label: "Fotografia" },
-  { href: "/videos", label: "Vídeos" },
+  { href: "/galeria", label: "Galeria" },
   { href: "/ingressos", label: "Ingressos" },
-  { href: "/instagram", label: "Instagram" },
+  { href: "/redes-sociais", label: "Redes Sociais" },
+  { href: "/mural-ceo", label: "Mural do CEO" },
 ];
 
 export function Navigation() {

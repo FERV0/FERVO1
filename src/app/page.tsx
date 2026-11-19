@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flame, Camera, Video, Ticket, Instagram as InstagramIcon } from "lucide-react";
+import { Flame, Camera, Ticket, Instagram as InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import { FireHero } from "@/components/FireHero";
 import { useEffect, useState } from "react";
@@ -9,30 +9,23 @@ import { useEffect, useState } from "react";
 const features = [
   {
     icon: Camera,
-    title: "Fotografia",
+    title: "Galeria",
     description: "Reviva os melhores momentos de cada edição",
-    href: "/fotografia",
+    href: "/galeria",
     color: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: Video,
-    title: "Vídeos",
-    description: "Assista aos aftermovies e melhores momentos",
-    href: "/videos",
-    color: "from-red-500 to-orange-500",
   },
   {
     icon: Ticket,
     title: "Ingressos",
     description: "Garanta seu lugar na próxima edição",
     href: "/ingressos",
-    color: "from-emerald-500 to-cyan-500",
+    color: "from-red-500 to-orange-500",
   },
   {
     icon: InstagramIcon,
-    title: "Instagram",
-    description: "Siga @fervoficial e fique por dentro",
-    href: "/instagram",
+    title: "Redes Sociais",
+    description: "Siga @fervoficial e entre em contato",
+    href: "/redes-sociais",
     color: "from-pink-500 to-rose-500",
   },
 ];
