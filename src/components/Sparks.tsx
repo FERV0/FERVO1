@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface SparksProps {
   count?: number;
@@ -8,6 +9,13 @@ interface SparksProps {
 }
 
 export function Sparks({ count = 20, className = "" }: SparksProps) {
+  const [windowHeight, setWindowHeight] = useState(800);
+
+  useEffect(() => {
+    // Set window height only on client side
+    setWindowHeight(window.innerHeight);
+  }, []);
+
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       {[...Array(count)].map((_, i) => (
@@ -19,7 +27,7 @@ export function Sparks({ count = 20, className = "" }: SparksProps) {
             bottom: "0%",
           }}
           animate={{
-            y: [-20, -window.innerHeight],
+            y: [-20, -windowHeight],
             opacity: [0, 1, 0.8, 0],
             scale: [0, 1, 0.5, 0],
           }}
