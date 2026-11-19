@@ -1,0 +1,65 @@
+=====================================
+   SITE FERVO - PRONTO PARA PUBLICAR
+=====================================
+
+REPOSITORIO CONFIGURADO:
+https://github.com/FERV0/FERVO1.git
+
+URL DO SEU SITE (apos publicacao):
+https://ferv0.github.io/FERVO1/
+
+=====================================
+   PASSO A PASSO RAPIDO
+=====================================
+
+1. INSTALAR GIT (se ainda nao instalou)
+   Baixe em: https://git-scm.com/download/win
+   Execute o instalador
+   Reinicie o computador
+
+2. PUBLICAR O SITE
+   Clique 2x no arquivo:
+   >>> 1-PUBLICAR-NO-GITHUB.bat <<<
+
+3. ATIVAR GITHUB PAGES
+   - Acesse: https://github.com/FERV0/FERVO1
+   - Va em: Settings > Pages
+   - Em Source: selecione "GitHub Actions"
+
+4. AGUARDAR
+   2-5 minutos para deploy
+
+5. ACESSAR SEU SITE
+   https://ferv0.github.io/FERVO1/
+
+=====================================
+   PARA ATUALIZAR NO FUTURO
+=====================================
+
+Clique 2x no arquivo:
+>>> 2-ATUALIZAR-SITE.bat <<<
+
+Digite o que voce mudou
+Aguarde 1-2 minutos
+Pronto! Site atualizado!
+
+=====================================
+   DOCUMENTACAO COMPLETA
+=====================================
+
+Leia estes arquivos para mais detalhes:
+
+1. PUBLICAR_AGORA.md (COMECE AQUI!)
+2. COMO_PUBLICAR.md
+3. DEPLOY_GITHUB.md
+
+=====================================
+
+DUVIDAS?
+Leia: PUBLICAR_AGORA.md
+
+SEU SITE ESTA PRONTO! 
+Basta instalar o Git e clicar no arquivo:
+1-PUBLICAR-NO-GITHUB.bat
+
+=====================================
