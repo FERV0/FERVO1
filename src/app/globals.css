@@ -21,6 +21,28 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Fix for mobile browsers */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Safe area for mobile notches */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Prevent content jump on mobile */
+html, body {
+  overscroll-behavior-y: none;
+}
+
+/* Image optimization */
+img {
+  content-visibility: auto;
+}
+
+img[loading="lazy"] {
+  min-height: 100px;
 }
 
 @layer utilities {

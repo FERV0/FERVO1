@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/galeria", label: "Galeria" },
   { href: "/ingressos", label: "Ingressos" },
   { href: "/redes-sociais", label: "Redes Sociais" },
-  { href: "/mural-ceo", label: "Mural do CEO" },
 ];
 
 export function Navigation() {
@@ -62,7 +61,7 @@ export function Navigation() {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-fervo-black/95 backdrop-blur-md border-b border-fervo-red/20">
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-fervo-black/95 backdrop-blur-md border-b border-fervo-red/20 safe-top">
         <div className="px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Flame className="w-7 h-7 text-fervo-red" />

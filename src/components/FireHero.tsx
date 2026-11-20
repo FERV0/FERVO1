@@ -32,7 +32,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
 
     const timers = [
       setTimeout(() => setStage(1), 200),   // Particles start
-      setTimeout(() => setStage(2), 900),   // Text appears
+      setTimeout(() => setStage(2), 900),   // Logo appears
       setTimeout(() => {
         setStage(3); // Fade out
         if (onComplete) {
@@ -112,39 +112,28 @@ export function FireHero({ onComplete }: FireHeroProps) {
         </div>
       )}
 
-      {/* 3D Typography - FERVO written in full */}
+      {/* Original FERVO Logo */}
       {stage >= 2 && (
         <motion.div
-          className="relative z-10 flex items-center justify-center px-8"
+          className="relative z-10 flex items-center justify-center px-8 w-full"
           initial={{ opacity: 0, y: 30, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 
-            className="text-7xl sm:text-8xl md:text-9xl font-black tracking-wider select-none"
-            style={{
-              fontFamily: 'system-ui, -apple-system, sans-serif',
-              color: '#fbbf24',
-              textShadow: `
-                0 1px 0 #f59e0b,
-                0 2px 0 #f59e0b,
-                0 3px 0 #f97316,
-                0 4px 0 #f97316,
-                0 5px 0 #ea580c,
-                0 6px 0 #ea580c,
-                0 8px 10px rgba(0, 0, 0, 0.6),
-                0 12px 20px rgba(249, 115, 22, 0.5),
-                0 0 40px rgba(251, 191, 36, 0.8),
-                0 0 60px rgba(249, 115, 22, 0.6),
-                0 0 80px rgba(234, 88, 12, 0.4)
-              `,
-              transform: 'perspective(500px) rotateX(5deg)',
-              WebkitTextStroke: '2px rgba(234, 88, 12, 0.3)',
-              letterSpacing: '0.1em',
-            }}
-          >
-            FERVO
-          </h1>
+          <div className="relative w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] aspect-square">
+            <img
+              src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
+              alt="FERVO"
+              className="w-full h-full object-contain"
+              style={{
+                filter: `
+                  drop-shadow(0 0 30px rgba(251, 191, 36, 0.8))
+                  drop-shadow(0 0 50px rgba(249, 115, 22, 0.6))
+                  drop-shadow(0 0 70px rgba(234, 88, 12, 0.4))
+                `,
+              }}
+            />
+          </div>
         </motion.div>
       )}
     </motion.div>

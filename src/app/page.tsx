@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Flame, Camera, Ticket, Instagram as InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import { FireHero } from "@/components/FireHero";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const features = [
   {
@@ -32,13 +32,6 @@ const features = [
 
 export default function HomePage() {
   const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-screen">
@@ -75,12 +68,14 @@ export default function HomePage() {
                   >
                     <span className="relative z-10">GARANTIR INGRESSO</span>
                   </Link>
-                  <Link
-                    href="/videos"
+                  <a
+                    href="https://t.me/+ICMwEufRgmNkNjAx"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group relative px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg font-bold text-lg tracking-wide transition-all hover:scale-105"
                   >
                     ASSISTIR AFTERMOVIES
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </div>
