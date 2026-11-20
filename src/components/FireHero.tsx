@@ -112,28 +112,71 @@ export function FireHero({ onComplete }: FireHeroProps) {
         </div>
       )}
 
-      {/* Original FERVO Logo */}
+      {/* FERVO Brand: Flame Icon + Golden Text */}
       {stage >= 2 && (
         <motion.div
-          className="relative z-10 flex items-center justify-center px-8 w-full"
-          initial={{ opacity: 0, y: 30, scale: 0.8 }}
+          className="relative z-10 flex items-center justify-center gap-4 px-8"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] aspect-square">
-            <img
-              src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
-              alt="FERVO"
-              className="w-full h-full object-contain"
-              style={{
-                filter: `
-                  drop-shadow(0 0 30px rgba(251, 191, 36, 0.8))
-                  drop-shadow(0 0 50px rgba(249, 115, 22, 0.6))
-                  drop-shadow(0 0 70px rgba(234, 88, 12, 0.4))
-                `,
-              }}
-            />
-          </div>
+          {/* Flame Icon */}
+          <motion.div
+            initial={{ scale: 0, rotate: -20 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+          >
+            <svg
+              width="60"
+              height="80"
+              viewBox="0 0 24 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]"
+            >
+              <path
+                d="M12 2C12 2 8 8 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 8 12 2 12 2Z"
+                fill="url(#flameGradient1)"
+              />
+              <path
+                d="M12 8C12 8 10 11 10 13C10 14.1046 10.8954 15 12 15C13.1046 15 14 14.1046 14 13C14 11 12 8 12 8Z"
+                fill="url(#flameGradient2)"
+              />
+              <defs>
+                <linearGradient id="flameGradient1" x1="12" y1="2" x2="12" y2="16" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FCD34D" />
+                  <stop offset="0.5" stopColor="#F59E0B" />
+                  <stop offset="1" stopColor="#DC2626" />
+                </linearGradient>
+                <linearGradient id="flameGradient2" x1="12" y1="8" x2="12" y2="15" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FEF3C7" />
+                  <stop offset="1" stopColor="#FBBF24" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </motion.div>
+
+          {/* FERVO Text - Golden Typography */}
+          <motion.h1
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider select-none"
+            style={{
+              fontFamily: '"Playfair Display", "Georgia", serif',
+              color: '#FBBF24',
+              textShadow: `
+                0 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(251, 191, 36, 0.6),
+                0 0 40px rgba(245, 158, 11, 0.4),
+                0 0 60px rgba(234, 88, 12, 0.3)
+              `,
+              fontWeight: 700,
+              letterSpacing: '0.05em',
+            }}
+          >
+            FERVO
+          </motion.h1>
         </motion.div>
       )}
     </motion.div>
