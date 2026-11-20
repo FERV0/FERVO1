@@ -122,7 +122,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
         >
           <div className="relative w-[320px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]">
             <img
-              src="/FERVO1/logo/logo-fervo.png"
+              src="/FERVO1/logo/9358C51D-0434-4405-B0C5-090CA91CEDD8.png"
               alt="FERVO"
               className="w-full h-auto object-contain"
               style={{
