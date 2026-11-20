@@ -47,7 +47,7 @@ export default function MuralCEOPage() {
                     <div className="w-full h-full rounded-lg bg-white flex items-center justify-center overflow-hidden">
                       {/* CEO Photo */}
                       <img
-                        src="/CEO/95C90D58-00F0-4D42-BBB3-CEAE2C2ABB82.PNG"
+                        src="/FERVO1/CEO/95C90D58-00F0-4D42-BBB3-CEAE2C2ABB82.PNG"
                         alt="CEO da Festa FERVO"
                         className="w-full h-full object-cover"
                       />

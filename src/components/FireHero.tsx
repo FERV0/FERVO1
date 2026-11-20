@@ -117,7 +117,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <img
-            src="/logo/photo_2026-11-20_18-42-51.jpg"
+            src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
             alt="FERVO"
             className="w-64 md:w-96 h-auto"
             style={{

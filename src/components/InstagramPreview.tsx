@@ -19,7 +19,7 @@ export function InstagramPreview() {
             <div className="w-16 h-16 rounded-full bg-black p-1 shadow-lg">
               <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
                 <img
-                  src="/logo/photo_2026-11-20_18-42-51.jpg"
+                  src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
                   alt="Logo FERVO"
                   className="w-full h-full object-contain p-1"
                 />

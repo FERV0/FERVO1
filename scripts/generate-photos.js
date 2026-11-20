@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
+// Base path do GitHub Pages
+const BASE_PATH = '/FERVO1';
+
 // Diretórios
 const photosDir = path.join(__dirname, '../public/fotos');
 const instagramDir = path.join(__dirname, '../public/instagram');
@@ -16,10 +19,10 @@ function getPhotos() {
       return ['.jpg', '.jpeg', '.png'].includes(ext) && file !== 'README.md';
     });
 
-    // Gerar array de objetos de fotos
+    // Gerar array de objetos de fotos com basePath correto
     const photos = photoFiles.map((file, index) => ({
       id: `photo-${index + 1}`,
-      url: `/fotos/${file}`,
+      url: `${BASE_PATH}/fotos/${file}`,
       alt: `Festa FERVO - Foto ${index + 1}`
     }));
 
@@ -41,8 +44,8 @@ function getInstagramPhotos() {
       return ['.jpg', '.jpeg', '.png'].includes(ext);
     });
 
-    // Retornar apenas 6 fotos
-    return photoFiles.slice(0, 6).map(file => `/instagram/${file}`);
+    // Retornar apenas 6 fotos com basePath correto
+    return photoFiles.slice(0, 6).map(file => `${BASE_PATH}/instagram/${file}`);
   } catch (error) {
     console.error('Erro ao ler diretório do Instagram:', error);
     return [];
