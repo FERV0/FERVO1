@@ -31,14 +31,14 @@ export function FireHero({ onComplete }: FireHeroProps) {
     }
 
     const timers = [
-      setTimeout(() => setStage(1), 300),   // Particles start
-      setTimeout(() => setStage(2), 800),   // Logo appears
+      setTimeout(() => setStage(1), 200),   // Particles start
+      setTimeout(() => setStage(2), 900),   // Text appears
       setTimeout(() => {
         setStage(3); // Fade out
         if (onComplete) {
           setTimeout(onComplete, 600);
         }
-      }, 3000),
+      }, 3200),
     ];
 
     return () => timers.forEach(clearTimeout);
@@ -55,51 +55,55 @@ export function FireHero({ onComplete }: FireHeroProps) {
       animate={{ opacity: stage >= 3 ? 0 : 1 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Fire particles rising from bottom across entire screen */}
+      {/* Fire particles rising from bottom across entire screen - Like embers rising */}
       {stage >= 1 && (
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => {
-            // Distribute particles across entire width
-            const xPosition = (i % 10) * 10 + Math.random() * 8;
-            const delay = Math.random() * 1.5;
-            const duration = 2 + Math.random() * 2;
-            const size = Math.random() * 4 + 2;
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(60)].map((_, i) => {
+            // Distribute particles naturally across entire screen width
+            const xStart = Math.random() * 100;
+            const delay = Math.random() * 0.8;
+            const duration = 3 + Math.random() * 2;
+            const size = Math.random() * 6 + 2;
+            const drift = (Math.random() - 0.5) * 80; // Horizontal drift
             
-            // Color variation
+            // Fire color palette
             const colors = [
-              'rgb(251, 191, 36)', // yellow
-              'rgb(249, 115, 22)', // orange
-              'rgb(239, 68, 68)',  // red
+              'rgb(251, 191, 36)',  // bright yellow
+              'rgb(251, 146, 60)',  // lighter orange
+              'rgb(249, 115, 22)',  // orange
+              'rgb(234, 88, 12)',   // dark orange
+              'rgb(239, 68, 68)',   // red
+              'rgb(220, 38, 38)',   // dark red
             ];
-            const color = colors[i % 3];
+            const color = colors[Math.floor(Math.random() * colors.length)];
             
             return (
               <motion.div
-                key={`particle-${i}`}
-                className="absolute rounded-full"
+                key={`ember-${i}`}
+                className="absolute rounded-full blur-[1px]"
                 style={{
-                  left: `${xPosition}%`,
-                  bottom: '-10px',
+                  left: `${xStart}%`,
+                  bottom: '-20px',
                   width: `${size}px`,
                   height: `${size}px`,
                   background: color,
-                  boxShadow: `0 0 ${size * 3}px ${color}`,
+                  boxShadow: `0 0 ${size * 4}px ${color}, 0 0 ${size * 2}px ${color}`,
                 }}
                 initial={{ 
                   y: 0,
+                  x: 0,
                   opacity: 0,
                   scale: 0,
                 }}
                 animate={{
-                  y: -window.innerHeight - 100,
-                  opacity: [0, 0.8, 0.6, 0],
-                  scale: [0, 1, 1, 0.3],
-                  x: [(Math.random() - 0.5) * 50],
+                  y: -(window.innerHeight + 100),
+                  x: drift,
+                  opacity: [0, 0.9, 0.7, 0.4, 0],
+                  scale: [0, 1.2, 1, 0.8, 0.2],
                 }}
                 transition={{
                   duration: duration,
                   delay: delay,
-                  repeat: Infinity,
                   ease: "easeOut",
                 }}
               />
@@ -108,22 +112,39 @@ export function FireHero({ onComplete }: FireHeroProps) {
         </div>
       )}
 
-      {/* Logo with official image */}
+      {/* 3D Typography - FERVO written in full */}
       {stage >= 2 && (
         <motion.div
-          className="relative z-10 flex items-center justify-center px-4"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative z-10 flex items-center justify-center px-8"
+          initial={{ opacity: 0, y: 30, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
-            alt="FERVO"
-            className="w-64 md:w-96 h-auto"
+          <h1 
+            className="text-7xl sm:text-8xl md:text-9xl font-black tracking-wider select-none"
             style={{
-              filter: "drop-shadow(0 0 30px rgba(251, 191, 36, 0.6)) drop-shadow(0 0 60px rgba(249, 115, 22, 0.4))",
+              fontFamily: 'system-ui, -apple-system, sans-serif',
+              color: '#fbbf24',
+              textShadow: `
+                0 1px 0 #f59e0b,
+                0 2px 0 #f59e0b,
+                0 3px 0 #f97316,
+                0 4px 0 #f97316,
+                0 5px 0 #ea580c,
+                0 6px 0 #ea580c,
+                0 8px 10px rgba(0, 0, 0, 0.6),
+                0 12px 20px rgba(249, 115, 22, 0.5),
+                0 0 40px rgba(251, 191, 36, 0.8),
+                0 0 60px rgba(249, 115, 22, 0.6),
+                0 0 80px rgba(234, 88, 12, 0.4)
+              `,
+              transform: 'perspective(500px) rotateX(5deg)',
+              WebkitTextStroke: '2px rgba(234, 88, 12, 0.3)',
+              letterSpacing: '0.1em',
             }}
-          />
+          >
+            FERVO
+          </h1>
         </motion.div>
       )}
     </motion.div>

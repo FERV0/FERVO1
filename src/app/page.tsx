@@ -128,13 +128,15 @@ export default function HomePage() {
                   Fique ligado nas nossas redes sociais para não perder nenhuma novidade.
                   A próxima festa está sendo preparada com muito carinho.
                 </p>
-                <Link
-                  href="/instagram"
+                <a
+                  href="https://www.instagram.com/fervoficial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg font-medium transition-all hover:scale-105"
                 >
                   <InstagramIcon className="w-5 h-5" />
                   Seguir @fervoficial
-                </Link>
+                </a>
               </motion.div>
             </div>
           </section>
