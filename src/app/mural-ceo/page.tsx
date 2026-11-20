@@ -45,10 +45,12 @@ export default function MuralCEOPage() {
                 <div className="relative flex-shrink-0">
                   <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl bg-gradient-to-br from-[#5E81AC] to-[#81A1C1] p-1 shadow-xl">
                     <div className="w-full h-full rounded-lg bg-white flex items-center justify-center overflow-hidden">
-                      {/* Placeholder - Ready for CEO photo */}
-                      <div className="w-full h-full bg-gradient-to-br from-[#5E81AC]/20 to-[#88C0D0]/20 flex items-center justify-center">
-                        <User className="w-20 h-20 text-[#5E81AC]" />
-                      </div>
+                      {/* CEO Photo */}
+                      <img
+                        src="/ceo/95C90D58-00F0-4D42-BBB3-CEAE2C2ABB82.PNG"
+                        alt="CEO da Festa FERVO"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
 

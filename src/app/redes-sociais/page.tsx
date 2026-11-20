@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Instagram, MessageCircle, ExternalLink, Heart, Sparkles } from "lucide-react";
 import { Sparks } from "@/components/Sparks";
+import { InstagramPreview } from "@/components/InstagramPreview";
 
 export default function RedesSociaisPage() {
   return (
@@ -82,47 +83,19 @@ export default function RedesSociaisPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-8"
+            className="mb-8"
+          >
+            <InstagramPreview />
+          </motion.div>
+
+          {/* WhatsApp Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white rounded-3xl shadow-2xl overflow-hidden"
           >
             <div className="p-8 md:p-12">
-              {/* Instagram Section */}
-              <div className="text-center mb-12">
-                <div className="inline-block p-4 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] rounded-2xl mb-6">
-                  <Instagram className="w-12 h-12 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  @fervoficial
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Novidades, próximas edições, fotos, bastidores e muito mais!
-                </p>
-
-                <motion.a
-                  href="https://www.instagram.com/fervoficial?avpt=MWsxMDh5aXZmazMy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Instagram className="w-6 h-6" />
-                  ACOMPANHAR NO INSTAGRAM
-                  <ExternalLink className="w-5 h-5" />
-                </motion.a>
-              </div>
-
-              {/* Divider */}
-              <div className="relative my-12">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t-2 border-gray-200" />
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-white px-4 text-gray-500 text-sm font-medium">
-                    OU
-                  </span>
-                </div>
-              </div>
-
               {/* WhatsApp Section */}
               <div className="text-center">
                 <div className="inline-block p-4 bg-[#25D366] rounded-2xl mb-6">
