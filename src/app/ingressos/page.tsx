@@ -143,13 +143,17 @@ export default function IngressosPage() {
                     </div>
                   </motion.div>
 
-                  <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                    Estamos preparando uma experiência especial para você.
-                    <br />
-                    <strong className="text-[#dc2626]">
+                  <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-serif">
+                    <span className="text-2xl">✨</span> Estamos preparando uma experiência especial para você! <span className="text-2xl">✨</span>
+                    <br /><br />
+                    <strong className="text-[#dc2626] text-xl">
                       Fique ligado nas nossas redes sociais
                     </strong>{" "}
                     para não perder nenhuma novidade sobre a próxima edição do FERVO!
+                    <br /><br />
+                    <span className="inline-block transform -rotate-2 bg-[#fbbf24] text-[#1a0510] px-3 py-1 font-bold">
+                      Vai ser ÉPICO! 🎪
+                    </span>
                   </p>
 
                   {/* CTA */}

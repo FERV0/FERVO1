@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/", label: "Início" },
   { href: "/galeria", label: "Galeria" },
   { href: "/ingressos", label: "Ingressos" },
+  { href: "/ceo", label: "CEO DA FERVO" },
   { href: "/redes-sociais", label: "Redes Sociais" },
 ];
 
