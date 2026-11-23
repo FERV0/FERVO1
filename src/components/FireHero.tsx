@@ -10,8 +10,18 @@ interface FireHeroProps {
 export function FireHero({ onComplete }: FireHeroProps) {
   const [stage, setStage] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [hasShownBefore, setHasShownBefore] = useState(false);
 
   useEffect(() => {
+    // Check if splash screen has already been shown in this session
+    const splashShown = sessionStorage.getItem('fervo-splash-shown');
+    if (splashShown === 'true') {
+      setHasShownBefore(true);
+      setStage(3);
+      if (onComplete) onComplete();
+      return;
+    }
+
     // Check for reduced motion preference
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
@@ -23,9 +33,13 @@ export function FireHero({ onComplete }: FireHeroProps) {
   }, []);
 
   useEffect(() => {
+    // Don't animate if already shown
+    if (hasShownBefore) return;
+
     // Skip animation if user prefers reduced motion
     if (prefersReducedMotion) {
       setStage(3);
+      sessionStorage.setItem('fervo-splash-shown', 'true');
       if (onComplete) onComplete();
       return;
     }
@@ -35,6 +49,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
       setTimeout(() => setStage(2), 900),   // Logo appears
       setTimeout(() => {
         setStage(3); // Fade out
+        sessionStorage.setItem('fervo-splash-shown', 'true');
         if (onComplete) {
           setTimeout(onComplete, 600);
         }
@@ -42,7 +57,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
     ];
 
     return () => timers.forEach(clearTimeout);
-  }, [onComplete, prefersReducedMotion]);
+  }, [onComplete, prefersReducedMotion, hasShownBefore]);
 
   if (stage >= 3) {
     return null;
@@ -112,7 +127,7 @@ export function FireHero({ onComplete }: FireHeroProps) {
         </div>
       )}
 
-      {/* FERVO Official Logo PNG - Full transparency preserved */}
+      {/* FERVO Official Logo PNG - Minimalista e elegante */}
       {stage >= 2 && (
         <motion.div
           className="relative z-10 flex items-center justify-center px-8"
@@ -120,13 +135,13 @@ export function FireHero({ onComplete }: FireHeroProps) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative w-[320px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]">
+          <div className="relative w-[280px] sm:w-[350px] md:w-[420px] lg:w-[480px] xl:w-[520px]">
             <img
               src="/FERVO1/logo/9358C51D-0434-4405-B0C5-090CA91CEDD8.png"
               alt="FERVO"
               className="w-full h-auto object-contain"
               style={{
-                filter: 'drop-shadow(0 0 30px rgba(251, 191, 36, 0.4)) drop-shadow(0 0 50px rgba(249, 115, 22, 0.2))',
+                filter: 'drop-shadow(0 0 20px rgba(251, 191, 36, 0.3)) drop-shadow(0 0 40px rgba(249, 115, 22, 0.15))',
               }}
             />
           </div>

@@ -7,14 +7,20 @@ import Image from "next/image";
 export default function CEOPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2E5090] via-[#5B7FB8] to-[#2E5090] relative overflow-hidden py-12 px-4">
-      {/* Orkut-style background pattern */}
+      {/* Orkut-style background pattern - more pronounced */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-15"
         style={{
-          backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
-          backgroundSize: '20px 20px',
+          backgroundImage: `radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)`,
+          backgroundSize: '24px 24px',
         }}
       />
+      
+      {/* Orkut blue shine effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Orkut-style header banner */}
@@ -23,37 +29,45 @@ export default function CEOPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 drop-shadow-lg">
-            CEO DA FERVO
-          </h1>
-          <p className="text-white/90 text-lg">👨‍💼 Conheça quem está por trás da festa 🎉</p>
+          <div className="inline-block bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl border-2 border-white/20 shadow-xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 drop-shadow-lg">
+              CEO DA FERVO
+            </h1>
+            <p className="text-white/90 text-lg flex items-center justify-center gap-2">
+              <span>👨‍💼</span> Conheça quem está por trás da festa <span>🎉</span>
+            </p>
+          </div>
         </motion.div>
 
-        {/* Main profile container - Orkut style white box */}
+        {/* Main profile container - Orkut style white box with enhanced borders */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-lg shadow-2xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-white/50"
         >
-          {/* Profile header section - Blue gradient like Orkut */}
-          <div className="bg-gradient-to-r from-[#4B6DA7] to-[#5B7FB8] p-6 border-b-4 border-[#2E5090]">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Profile picture - FOTO REAL */}
+          {/* Profile header section - Blue gradient like Orkut - enhanced */}
+          <div className="bg-gradient-to-r from-[#4B6DA7] via-[#5B7FB8] to-[#4B6DA7] p-6 md:p-8 border-b-4 border-[#2E5090] relative overflow-hidden">
+            {/* Orkut shine effect */}
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+            
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 relative z-10">
+              {/* Profile picture - FOTO REAL - Orkut style frame */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
                 className="relative"
               >
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg bg-white p-2 shadow-xl overflow-hidden">
+                <div className="w-32 h-32 md:w-44 md:h-44 rounded-xl bg-white p-3 shadow-2xl overflow-hidden border-2 border-blue-200">
                   <img
                     src="/FERVO1/fotos/foto 1.PNG"
                     alt="Binho Gomes - CEO da FERVO"
-                    className="w-full h-full object-cover rounded"
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white" />
+                {/* Online indicator - Orkut style */}
+                <div className="absolute -bottom-2 -right-2 bg-green-500 w-7 h-7 rounded-full border-4 border-white shadow-lg" />
               </motion.div>
 
               {/* Profile info */}
@@ -80,24 +94,29 @@ export default function CEOPage() {
                 </div>
               </div>
 
-              {/* Orkut-style stats */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-white mb-1">
-                  <Heart className="w-6 h-6 inline text-red-400 fill-red-400" />
+              {/* Orkut-style stats - enhanced */}
+              <div className="bg-white/15 backdrop-blur-md rounded-xl p-5 text-center border-2 border-white/20 shadow-lg">
+                <div className="text-2xl font-bold text-white mb-2">
+                  <Heart className="w-7 h-7 inline text-red-400 fill-red-400 drop-shadow-lg" />
                 </div>
-                <p className="text-white/80 text-sm">Muito confiável</p>
+                <p className="text-white/90 text-sm font-medium">Muito confiável</p>
+                <div className="mt-2 flex items-center justify-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3 h-3 text-yellow-300 fill-yellow-300" />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Profile content - Orkut boxes style */}
-          <div className="p-6 md:p-8 space-y-6">
-            {/* Sobre mim - Orkut blue box */}
+          {/* Profile content - Orkut boxes style - enhanced */}
+          <div className="p-6 md:p-10 space-y-6 bg-gradient-to-b from-gray-50 to-white">
+            {/* Sobre mim - Orkut blue box - enhanced */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="border-l-4 border-[#2E5090] bg-gradient-to-r from-blue-50 to-white rounded-r-lg p-6"
+              className="border-l-4 border-[#2E5090] bg-gradient-to-r from-blue-50 via-white to-blue-50/50 rounded-r-xl p-6 shadow-md"
             >
               <h3 className="text-2xl font-bold text-[#2E5090] mb-4 flex items-center gap-2">
                 <User className="w-6 h-6" />
@@ -116,12 +135,12 @@ export default function CEOPage() {
               </div>
             </motion.div>
 
-            {/* Paixões - Orkut style */}
+            {/* Paixões - Orkut style - enhanced */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="border-l-4 border-pink-500 bg-gradient-to-r from-pink-50 to-white rounded-r-lg p-6"
+              className="border-l-4 border-pink-500 bg-gradient-to-r from-pink-50 via-white to-pink-50/50 rounded-r-xl p-6 shadow-md"
             >
               <h3 className="text-2xl font-bold text-pink-600 mb-4 flex items-center gap-2">
                 <Heart className="w-6 h-6" />
@@ -151,12 +170,12 @@ export default function CEOPage() {
               </div>
             </motion.div>
 
-            {/* FERVO History - Orkut orange box */}
+            {/* FERVO History - Orkut orange box - enhanced */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
-              className="border-l-4 border-orange-500 bg-gradient-to-r from-orange-50 to-white rounded-r-lg p-6"
+              className="border-l-4 border-orange-500 bg-gradient-to-r from-orange-50 via-white to-orange-50/50 rounded-r-xl p-6 shadow-md"
             >
               <h3 className="text-2xl font-bold text-orange-600 mb-4 flex items-center gap-2">
                 <Trophy className="w-6 h-6" />
@@ -199,12 +218,12 @@ export default function CEOPage() {
               </div>
             </motion.div>
 
-            {/* PORTFÓLIOS - Seção especial */}
+            {/* PORTFÓLIOS - Seção especial - enhanced */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7 }}
-              className="border-l-4 border-purple-600 bg-gradient-to-r from-purple-50 to-white rounded-r-lg p-6"
+              className="border-l-4 border-purple-600 bg-gradient-to-r from-purple-50 via-white to-purple-50/50 rounded-r-xl p-6 shadow-md"
             >
               <h3 className="text-2xl font-bold text-purple-600 mb-6 flex items-center gap-2">
                 <FileText className="w-6 h-6" />
@@ -224,12 +243,13 @@ export default function CEOPage() {
                     </div>
                   </div>
                   
-                  {/* Visualizador de PDF embutido */}
-                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4" style={{ height: '500px' }}>
+                  {/* Visualizador de PDF embutido - RESPONSIVO */}
+                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4">
                     <iframe
                       src="/FERVO1/instagram/FAROFA DA FERVO.pdf"
-                      className="w-full h-full"
+                      className="w-full h-[400px] md:h-[600px] lg:h-[700px]"
                       title="FAROFA DA FERVO - Portfólio"
+                      style={{ aspectRatio: 'auto' }}
                     />
                   </div>
                   
@@ -258,12 +278,13 @@ export default function CEOPage() {
                     </div>
                   </div>
                   
-                  {/* Visualizador de PDF embutido */}
-                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4" style={{ height: '500px' }}>
+                  {/* Visualizador de PDF embutido - RESPONSIVO */}
+                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4">
                     <iframe
                       src="/FERVO1/instagram/PORTIFOLIO DJ BINHO GOMEZ_.pdf.pdf"
-                      className="w-full h-full"
+                      className="w-full h-[400px] md:h-[600px] lg:h-[700px]"
                       title="DJ BINHO GOMEZ - Portfólio"
+                      style={{ aspectRatio: 'auto' }}
                     />
                   </div>
                   
@@ -282,12 +303,12 @@ export default function CEOPage() {
               </div>
             </motion.div>
 
-            {/* Contact/Social - Orkut style */}
+            {/* Contact/Social - Orkut style - enhanced */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8 }}
-              className="border-l-4 border-green-500 bg-gradient-to-r from-green-50 to-white rounded-r-lg p-6"
+              className="border-l-4 border-green-500 bg-gradient-to-r from-green-50 via-white to-green-50/50 rounded-r-xl p-6 shadow-md"
             >
               <h3 className="text-2xl font-bold text-green-600 mb-4 flex items-center gap-2">
                 <Music className="w-6 h-6" />
@@ -313,12 +334,12 @@ export default function CEOPage() {
               </div>
             </motion.div>
 
-            {/* Orkut-style footer note */}
+            {/* Orkut-style footer note - enhanced */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4 text-center"
+              className="bg-gradient-to-r from-blue-100 via-purple-50 to-blue-100 border-2 border-blue-300 rounded-xl p-5 text-center shadow-md"
             >
               <p className="text-sm text-gray-600">
                 <Star className="w-4 h-4 inline text-yellow-500 fill-yellow-500" />
