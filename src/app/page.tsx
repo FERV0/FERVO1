@@ -150,25 +150,33 @@ export default function HomePage() {
                 </p>
               </motion.div>
 
-              {/* Gallery preview grid */}
+              {/* Gallery preview grid - FOTOS REAIS */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
               >
-                {[1, 2, 3, 4].map((i) => (
+                {[
+                  "/FERVO1/fotos/00C39D82-909E-4F44-8A8C-ACBD7CD95576.jpg",
+                  "/FERVO1/fotos/16D48244-92ED-485A-806B-1F1F727CCCA5.jpg",
+                  "/FERVO1/fotos/1C64BC20-EF77-4F76-9B00-BA56BFEF91B3.jpg",
+                  "/FERVO1/fotos/24A14442-6065-4CC2-8E14-A7AC8BE790B2.jpg"
+                ].map((photo, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="aspect-square bg-gradient-to-br from-fervo-red/20 to-fervo-orange/20 rounded-lg border border-white/10 hover:border-fervo-red/50 transition-all hover:scale-105"
+                    className="aspect-square rounded-lg border border-white/10 hover:border-fervo-red/50 transition-all hover:scale-105 overflow-hidden group"
                   >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <Camera className="w-10 h-10 text-white/30" />
-                    </div>
+                    <img
+                      src={photo}
+                      alt={`Festa FERVO - Momento ${i + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </motion.div>
                 ))}
               </motion.div>
@@ -235,7 +243,7 @@ export default function HomePage() {
                   <span className="fire-text">CONHEÇA QUEM ESTÁ POR TRÁS</span>
                 </h2>
                 <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-                  <strong className="text-white">Bill Gomes (Binho Gomes)</strong> é o CEO e
+                  <strong className="text-white">Binho Gomes</strong> é o CEO e
                   fundador do FERVO, responsável por criar experiências inesquecíveis que
                   contagiam Salvador com energia e música.
                 </p>

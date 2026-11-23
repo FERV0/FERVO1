@@ -15,13 +15,13 @@ export function InstagramPreview() {
       <div className="bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            {/* Profile picture com logo oficial */}
-            <div className="w-16 h-16 rounded-full bg-black p-1 shadow-lg">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
+            {/* Profile picture com logo oficial FERVO */}
+            <div className="w-16 h-16 rounded-full bg-black p-0.5 shadow-lg overflow-hidden">
+              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
                 <img
-                  src="/FERVO1/logo/photo_2026-11-20_18-42-51.jpg"
+                  src="/FERVO1/instagram/instagram.jpg"
                   alt="Logo FERVO"
-                  className="w-full h-full object-contain p-1"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

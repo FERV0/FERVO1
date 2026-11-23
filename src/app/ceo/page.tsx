@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Music, Heart, Star, Calendar, MapPin, Trophy, Users } from "lucide-react";
+import { User, Music, Heart, Star, Calendar, MapPin, Trophy, Users, FileText, Download } from "lucide-react";
 import Image from "next/image";
 
 export default function CEOPage() {
@@ -39,18 +39,19 @@ export default function CEOPage() {
           {/* Profile header section - Blue gradient like Orkut */}
           <div className="bg-gradient-to-r from-[#4B6DA7] to-[#5B7FB8] p-6 border-b-4 border-[#2E5090]">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Profile picture */}
+              {/* Profile picture - FOTO REAL */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
                 className="relative"
               >
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg bg-white p-2 shadow-xl">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center">
-                    <User className="w-16 h-16 text-gray-500" />
-                    {/* Placeholder for CEO photo */}
-                  </div>
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg bg-white p-2 shadow-xl overflow-hidden">
+                  <img
+                    src="/FERVO1/fotos/foto 1.PNG"
+                    alt="Binho Gomes - CEO da FERVO"
+                    className="w-full h-full object-cover rounded"
+                  />
                 </div>
                 <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white" />
               </motion.div>
@@ -58,10 +59,10 @@ export default function CEOPage() {
               {/* Profile info */}
               <div className="flex-1 text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  Bill Gomes
+                  Binho Gomes
                 </h2>
                 <p className="text-xl text-white/90 mb-4 italic">
-                  "Binho Gomes"
+                  DJ & CEO da FERVO
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                   <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/20 rounded-full text-white text-sm">
@@ -104,13 +105,13 @@ export default function CEOPage() {
               </h3>
               <div className="space-y-3 text-gray-700">
                 <p className="leading-relaxed">
-                  <strong className="text-[#2E5090]">Nome completo:</strong> Bill Gomes (Binho Gomes)
+                  <strong className="text-[#2E5090]">Nome completo:</strong> Binho Gomes
                 </p>
                 <p className="leading-relaxed">
                   <strong className="text-[#2E5090]">Função:</strong> CEO e Fundador do FERVO
                 </p>
-                <p className="leading-relaxed italic text-gray-600">
-                  💡 <em>[Biografia detalhada será adicionada em breve com informações oficiais]</em>
+                <p className="leading-relaxed">
+                  Binho Gomes é o idealizador e CEO da FERVO, uma das festas mais aguardadas de Salvador, Bahia. Com sua experiência como DJ e produtor, Binho transforma cada edição do FERVO em uma experiência única, unindo música eletrônica, energia baiana e conexões verdadeiras.
                 </p>
               </div>
             </motion.div>
@@ -168,8 +169,8 @@ export default function CEOPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-orange-600">Fundação</p>
-                    <p className="text-sm italic text-gray-600">
-                      [Data e história da criação do FERVO serão adicionadas]
+                    <p className="text-sm">
+                      A FERVO nasceu da paixão de Binho Gomes por criar experiências memoráveis através da música e da celebração.
                     </p>
                   </div>
                 </div>
@@ -180,7 +181,7 @@ export default function CEOPage() {
                   <div>
                     <p className="font-semibold text-orange-600">Visão</p>
                     <p className="text-sm">
-                      Criar experiências inesquecíveis e contagiar Salvador com a melhor energia.
+                      Criar experiências inesquecíveis e contagiar Salvador com a melhor energia, unindo música de qualidade e pessoas especiais.
                     </p>
                   </div>
                 </div>
@@ -190,9 +191,92 @@ export default function CEOPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-orange-600">Conquistas</p>
-                    <p className="text-sm italic text-gray-600">
-                      [Marcos importantes e realizações serão adicionados]
+                    <p className="text-sm">
+                      Transformou a FERVO em uma das festas mais aguardadas de Salvador, criando uma comunidade apaixonada por música e celebração.
                     </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* PORTFÓLIOS - Seção especial */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.7 }}
+              className="border-l-4 border-purple-600 bg-gradient-to-r from-purple-50 to-white rounded-r-lg p-6"
+            >
+              <h3 className="text-2xl font-bold text-purple-600 mb-6 flex items-center gap-2">
+                <FileText className="w-6 h-6" />
+                Portfólios Oficiais
+              </h3>
+              
+              <div className="space-y-6">
+                {/* PORTFÓLIO 1 - FAROFA DA FERVO */}
+                <div className="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-purple-700">FAROFA DA FERVO</h4>
+                      <p className="text-sm text-gray-600">Portfólio completo do evento</p>
+                    </div>
+                  </div>
+                  
+                  {/* Visualizador de PDF embutido */}
+                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4" style={{ height: '500px' }}>
+                    <iframe
+                      src="/FERVO1/instagram/FAROFA DA FERVO.pdf"
+                      className="w-full h-full"
+                      title="FAROFA DA FERVO - Portfólio"
+                    />
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <a
+                      href="/FERVO1/instagram/FAROFA DA FERVO.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                    >
+                      <Download className="w-4 h-4" />
+                      Abrir em Nova Aba
+                    </a>
+                  </div>
+                </div>
+
+                {/* PORTFÓLIO 2 - DJ BINHO GOMEZ */}
+                <div className="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-blue-700">DJ BINHO GOMEZ</h4>
+                      <p className="text-sm text-gray-600">Portfólio profissional</p>
+                    </div>
+                  </div>
+                  
+                  {/* Visualizador de PDF embutido */}
+                  <div className="bg-gray-100 rounded-lg overflow-hidden mb-4" style={{ height: '500px' }}>
+                    <iframe
+                      src="/FERVO1/instagram/PORTIFOLIO DJ BINHO GOMEZ_.pdf.pdf"
+                      className="w-full h-full"
+                      title="DJ BINHO GOMEZ - Portfólio"
+                    />
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <a
+                      href="/FERVO1/instagram/PORTIFOLIO DJ BINHO GOMEZ_.pdf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                    >
+                      <Download className="w-4 h-4" />
+                      Abrir em Nova Aba
+                    </a>
                   </div>
                 </div>
               </div>
@@ -202,10 +286,10 @@ export default function CEOPage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7 }}
-              className="border-l-4 border-purple-500 bg-gradient-to-r from-purple-50 to-white rounded-r-lg p-6"
+              transition={{ delay: 0.8 }}
+              className="border-l-4 border-green-500 bg-gradient-to-r from-green-50 to-white rounded-r-lg p-6"
             >
-              <h3 className="text-2xl font-bold text-purple-600 mb-4 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-green-600 mb-4 flex items-center gap-2">
                 <Music className="w-6 h-6" />
                 Redes Sociais
               </h3>
@@ -214,16 +298,16 @@ export default function CEOPage() {
                   href="https://www.instagram.com/fervoficial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg hover:shadow-md transition-all group"
+                  className="flex items-center gap-3 p-3 bg-gradient-to-r from-green-100 to-teal-100 rounded-lg hover:shadow-md transition-all group"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-900">Instagram Oficial</p>
-                    <p className="text-sm text-purple-600 group-hover:underline">@fervoficial</p>
+                    <p className="text-sm text-green-600 group-hover:underline">@fervoficial</p>
                   </div>
                 </a>
               </div>
@@ -233,7 +317,7 @@ export default function CEOPage() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.9 }}
               className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4 text-center"
             >
               <p className="text-sm text-gray-600">
@@ -242,7 +326,7 @@ export default function CEOPage() {
                 <Star className="w-4 h-4 inline text-yellow-500 fill-yellow-500" />
               </p>
               <p className="text-xs text-gray-500 mt-2">
-                💙 Informações oficiais e detalhadas sobre Bill Gomes serão adicionadas em breve
+                💙 Conheça mais sobre Binho Gomes através dos portfólios oficiais acima
               </p>
             </motion.div>
           </div>
